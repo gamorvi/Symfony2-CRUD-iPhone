@@ -1,0 +1,21 @@
+phone_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: PhoneBundle:Default:index }
+
+index:
+    path:     /contact/index
+    defaults: { _controller: PhoneBundle:Contact:index }
+
+new:
+    path:     /contact/new
+    defaults: { _controller: PhoneBundle:Contact:new }
+    
+edit:
+    path:     /contact/edit/{id}
+    defaults: { _controller: PhoneBundle:Contact:edit }
+    requirements:
+        id:  \d+
+
+delete:
+    path:     /contact/delete
+    defaults: { _controller: PhoneBundle:Contact:delete }

@@ -1,0 +1,12 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}iPhone | New Contact{% endblock %}
+
+{% block body %}
+<h1>Create New Contact</h1>
+<p><a href="{{path('index')}}">Contacts List</a></p>
+{% if done is defined %}
+    <strong>{{ done }}</strong><br/><br/>
+{% endif %}
+{{ form(form) }}
+{% endblock %}

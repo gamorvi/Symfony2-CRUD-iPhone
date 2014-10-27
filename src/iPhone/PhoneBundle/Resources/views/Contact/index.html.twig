@@ -1,0 +1,18 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}iPhone Home{% endblock %}
+
+{% block body %}
+<h1>Welcome to your iPhone</h1>
+<p><a href="{{ path('new') }}">+ New Contact</a></p>
+{% if error is defined %}
+    {{error}}
+{% else %}
+    <table border="1">
+        <tr><td>Full name</td><td>Mobile Number</td><td>Action</td></tr>
+    {% for contact in contacts %}
+        <tr><td>{{contact.firstname}} {{contact.othernames}} {{contact.lastname}}</td><td>{{contact.mobile}}</td><td> <a href="{{ path('edit',{ 'id': contact.id })}}">Edit</a> | <a href="{{path('delete')}}">Delete</a></td></tr>
+    {% endfor %}
+    </table>
+{% endif %}
+{% endblock %}

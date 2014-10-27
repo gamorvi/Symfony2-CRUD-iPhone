@@ -1,0 +1,4 @@
+phone:
+    resource: "@PhoneBundle/Resources/config/routing.yml"
+    prefix:   /
+
