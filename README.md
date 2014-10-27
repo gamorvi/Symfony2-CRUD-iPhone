@@ -1,7 +1,7 @@
 Symfony2-CRUD-iPhone
 ====================
 
-Beginners introduction to Symfony2 implementing a simple CRUD application (routing, annotations, controller action, yaml, doctrine)
+Beginners introduction to Symfony2 implementing a simple CRUD application (routing, annotations, controller action, yaml, doctrine, Twig)
 
 1. Create a bundle PhoneBundle
 2. Create Controller ContactController add actions (index, new, edit, delete)
