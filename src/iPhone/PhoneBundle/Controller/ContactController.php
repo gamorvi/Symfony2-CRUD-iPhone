@@ -86,10 +86,30 @@ class ContactController extends Controller
                 'form' => $form->createView(), 'done' => $done, 
             ));    }
 
-    public function deleteAction()
+    public function deleteAction(Request $request, $id)
     {
-        return $this->render('PhoneBundle:Contact:delete.html.twig', array( 
-                 
-            ));    }
+        $em = $this->getDoctrine()->getManager();
+        $contact = $em->getRepository('PhoneBundle:Contact')->find($id);
+        if (!$contact) {
+          return $this->render('PhoneBundle:Contact:index.html.twig', 
+                  array('error'=>'No contact found for id ' . $id
+              ));
+        }
+
+        $form = $this->createFormBuilder($contact)
+                ->add('delete', 'submit')
+                ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+          $em->remove($contact);
+          $em->flush();
+          return new Response('The contact was deleted successfully');
+        }
+
+        $build['form'] = $form->createView();
+        return $this->render('PhoneBundle:Contact:delete.html.twig', $build);
+    }
 
 }
