@@ -91,7 +91,7 @@ class ContactController extends Controller
         $em = $this->getDoctrine()->getManager();
         $contact = $em->getRepository('PhoneBundle:Contact')->find($id);
         if (!$contact) {
-          return $this->render('PhoneBundle:Contact:index.html.twig', 
+          return $this->render('PhoneBundle:Contact:delete.html.twig', 
                   array('error'=>'No contact found for id ' . $id
               ));
         }
@@ -105,11 +105,13 @@ class ContactController extends Controller
         if ($form->isValid()) {
           $em->remove($contact);
           $em->flush();
-          return new Response('The contact was deleted successfully');
+          return $this->redirect($this->generateUrl('index'));
+          //return new Response('The contact was deleted successfully');
         }
 
-        $build['form'] = $form->createView();
-        return $this->render('PhoneBundle:Contact:delete.html.twig', $build);
+        return $this->render('PhoneBundle:Contact:delete.html.twig', 
+                array('form' => $form->createView(), 'mobile'=>$contact->getFirstname().' '.$contact->getOthernames().' '.$contact->getlastname().' - '.$contact->getMobile(),  
+        ));
     }
 
 }
