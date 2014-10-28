@@ -7,11 +7,12 @@
 <p><a href="{{ path('new') }}">+ New Contact</a></p>
 {% if error is defined %}
     {{error}}
-{% else %}
+{% endif %}
+{% if contacts is defined %}
     <table border="1">
         <tr><td>Full name</td><td>Mobile Number</td><td>Action</td></tr>
     {% for contact in contacts %}
-        <tr><td>{{contact.firstname}} {{contact.othernames}} {{contact.lastname}}</td><td>{{contact.mobile}}</td><td> <a href="{{ path('edit',{ 'id': contact.id })}}">Edit</a> | <a href="{{path('delete',{id:contact.id})}}">Delete</a></td></tr>
+        <tr><td>{{contact.firstname}} {{contact.othernames}} {{contact.lastname}}</td><td>{{contact.mobile}}</td><td> <a href="{{ path('edit',{ 'id': contact.id })}}">Edit</a> | <a href="{{path('delete',{id:contact.id},{delete:'delete'})}}">Delete</a></td></tr>
     {% endfor %}
     </table>
 {% endif %}

@@ -17,7 +17,7 @@ edit:
         id:  \d+
 
 delete:
-    path:     /contact/delete/{id}
+    path:     /contact/{id}/delete
     defaults: { _controller: PhoneBundle:Contact:delete }
     requirements:
         id:  \d+
