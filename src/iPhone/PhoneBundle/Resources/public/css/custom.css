@@ -1,0 +1,256 @@
+.course-title{
+    cursor: pointer;
+}
+
+.course-title:hover{
+    text-decoration: underline;
+}
+
+
+.course dd{
+    margin-bottom: 1em;
+}
+
+.btn-danger-hover:hover, .btn-danger-hover:focus{
+    background-image: -webkit-linear-gradient(top, #d9534f 0%, #c12e2a 100%);
+    background-image: linear-gradient(to bottom, #d9534f 0%, #c12e2a 100%);
+    background-repeat: repeat-x;
+    border-color: #b92c28;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9534f', endColorstr='#ffc12e2a', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    background-color: #c12e2a;
+    background-position: 0 -15px;
+    color:white;
+}
+
+.danger-title{
+    color: #c12e2a;
+}
+
+.has-error ul.field-errors{
+    list-style-type: none;
+    margin: 5px 0 0 0;
+    padding: 0;
+    color: red;
+    font-weight: bold;
+}
+
+.label-person{
+    background-color: #B50051;
+}
+
+h2.edit-title{
+    margin-bottom:30px;
+}
+
+.btn-course-edit{
+    margin-left:-55px;
+}
+
+.panel-dashboard{
+    background-color:#eee;
+    border-color: #eee;
+    padding: 0 20px 20px 20px;
+}
+.panel-dashboard h3{
+    color :#757575;
+}
+.course-container{
+    background: white;
+    padding:5px;
+}
+
+.course-updated-date{
+    color:#757575;
+    font-style: italic;
+    font-size:90%;
+}
+
+.report-container{
+    margin-bottom:15px;
+}
+.panel-dashboard .summary{
+    font-style: italic;
+}
+.report-container h4{
+    margin:0 0 5px 0;
+}
+
+
+
+.label-white
+{
+    background-color: white;
+    color: #757575;
+}
+
+
+#override-properties
+{
+    display: none;
+    margin-top: 15px;
+    background: #FFF6E7;
+}
+#override-info
+{
+    margin-bottom:20px;
+    font-style: italic;
+}
+
+
+/** Form Wizard **/
+.step{
+    display: none;
+}
+.step.active{
+    display:block;
+}
+
+
+/** Course Properties DL **/
+.course-properties dd{
+    margin-bottom: 10px;
+}
+
+/** Instance sessions table **/
+#instance-sessions{
+    margin-top: 3em;
+    margin-bottom: 0;
+}
+
+/** Session: delete link in dropdown **/
+#delete-sessions{
+    color: #d43f3a;
+    font-weight: bold;
+}
+
+#instance-sessions table tbody tr{
+    cursor: pointer;
+}
+
+.datepicker{
+    z-index:10000;
+}
+
+/** Session: edit multiple sessions **/
+.edit-disabled{
+    border: 1px solid #ccc;
+}
+.edit-disabled label{
+    color: #ccc;
+}
+.edit-enabled{
+    border: 1px solid green;
+}
+.edit-enabled, .edit-disabled{
+    margin-bottom: 20px;
+    padding-top: 8px;
+    border-radius: 10px;
+}
+
+/** Instance Table **/
+#instances-table .archived, #unarchiveParent{
+    display: none;
+}
+#instances-table tr.archived td {
+    opacity: 0.6;
+    font-style: italic;
+}
+/* statuses*/
+tr.live{
+    background: #dff0d8;
+}
+tr.completed{
+    background: #D8E3F0;
+}
+tr.draft{
+    background: #fcf8e3;
+}
+tr.cancelled{
+    background: #F0D8D8;
+}
+
+
+/** Dropdown list hover **/
+.dropdown-menu>li>a.warning:hover{
+    background: #c12e2a;
+    color:white;
+}
+.dropdown-menu>li>a.success:hover{
+    background: #5cb85c;
+    color:white;
+}
+
+/** Completed 'label' **/
+span.completed, span.cancelled, span.imported{
+    font-size: 14px;
+    font-weight: normal;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 6px 6px;
+    position: relative;
+    display: inline-block;
+    border-radius: 4px;
+    line-height: 1.5;
+    vertical-align: middle;
+    background-color: #D8E3F0;
+}
+span.cancelled{
+    background-color: #F0D8D8;
+}
+span.imported{
+    background-color: #D8E3F0;
+}
+
+/** Target Audience multi-select **/
+#course_edit_targetAudienceDepartments
+{
+    height:300px;
+}
+#course_edit_skillCategories{
+    height:300px;
+}
+
+/** help-block override */
+.help-block{
+    margin-top: 0;
+    font-style: italic;
+}
+
+/** User list - inactive user **/
+.user-inactive{
+    background: #eee;
+    opacity: 0.5;
+    font-style: italic;
+}
+
+.user-divisional{
+    font-weight:bold;
+}
+
+
+label.required:after {
+    content:" *";
+    color:red;
+}
+
+/** User edit - subunits widget */
+#user-subunits div.checkbox div.checkbox{
+
+}
+
+div.checkbox-wrap{
+    display: none;
+}
+
+.subunit-toggle{
+    color: #97aed1;
+    cursor: pointer;
+}
+
+.report-container h4{
+    font-size: 110%;
+}
+.course-container a{
+    font-size:120%;
+}

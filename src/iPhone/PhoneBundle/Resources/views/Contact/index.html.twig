@@ -1,9 +1,12 @@
-{% extends "::base.html.twig" %}
+{% extends "PhoneBundle::layout.html.twig" %}
 
 {% block title %}iPhone Home{% endblock %}
 
 {% block body %}
-<h1>Welcome to your iPhone</h1>
+ <div class="row">
+        <div class="col-md-12">
+<h1>Welcome </h1>
+        </div></div>
 <p><a href="{{ path('new') }}">+ New Contact</a></p>
 {% if error is defined %}
     {{error}}
