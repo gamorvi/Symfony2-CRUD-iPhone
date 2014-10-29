@@ -113,5 +113,35 @@ class ContactController extends Controller
                 array('form' => $form->createView(), 'mobile'=>$contact->getFirstname().' '.$contact->getOthernames().' '.$contact->getlastname().' - '.$contact->getMobile(),  
         ));
     }
+    
+    public function bulkAction(){
+        $arr = array('Marie', 'Ruth', 'Griff', 'Kojo', 'Bongo', 'Robert');
+        $new = $updated = 0;
+        $em = $this->getDoctrine()->getManager();
+        $contactRepo = $em->getRepository("PhoneBundle:Contact");
+        foreach($arr as $row){
+            $contact = $contactRepo->findByFirstname( (string)$row);
+            if(!$contact){
+                $contact = new Contact();
+                $contact 
+                        -> setFirstname($row)
+                        ->setLastname('new_Totovi')
+                        ->setIsactive(1)
+                        ->setMobile('0000');
+                $em->persist($contact);
+                $new++;
+            } else {
+                if($contact->getMobile() <> '1111'){
+                    $contact
+                        ->setMobile('2222')
+                        ->setIsactive(1);
+                    $updated++;
+                }
+            }
+        }
+        $em->flush();
+        return $this->render('PhoneBundle:Contact:bulk.html.twig', array('echo'=>$new.' inserted '.$updated. ' updated.'));
+        //echo "{$new} inserted {$updated} updated.";
+    }
 
 }
