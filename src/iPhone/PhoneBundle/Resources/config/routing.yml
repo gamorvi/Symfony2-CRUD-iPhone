@@ -21,3 +21,7 @@ delete:
     defaults: { _controller: PhoneBundle:Contact:delete }
     requirements:
         id:  \d+
+
+bulk:
+    path:       /contact/bulk
+    defaults:   { _controller: PhoneBundle:Contact:bulk }

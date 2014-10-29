@@ -12,4 +12,15 @@ use Doctrine\ORM\EntityRepository;
  */
 class ContactRepository extends EntityRepository
 {
+    public function findByFirstname($firstname)
+    {
+        $query = $this->getEntityManager()->createQuery(
+            "SELECT c FROM PhoneBundle:Contact c
+            WHERE c.firstname = :firstname "
+        );
+
+        $query->setParameter(':firstname', $firstname);
+
+        return $query->getOneOrNullResult();
+    }
 }
