@@ -1,7 +1,3 @@
-phone_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: PhoneBundle:Default:index }
-
 index:
     path:     /contact/index
     defaults: { _controller: PhoneBundle:Contact:index }
