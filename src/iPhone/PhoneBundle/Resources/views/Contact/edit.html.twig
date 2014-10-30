@@ -1,8 +1,12 @@
 {% extends "PhoneBundle::layout.html.twig" %}
+{% form_theme form "PhoneBundle:Form:fields.html.twig" %}
 
 {% block title %}PhoneBundle:Contact:edit{% endblock %}
 
 {% block body %}
 <h1>Edit Contact</h1>
-{{ form(form)}}
+{{ form_widget(form) }}
+{{ form_errors(form) }}
+{{ form_rest(form) }}
+{{ form(form) }}
 {% endblock %}

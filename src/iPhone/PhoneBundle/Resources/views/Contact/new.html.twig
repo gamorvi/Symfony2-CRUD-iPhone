@@ -1,6 +1,6 @@
 {% extends "PhoneBundle::layout.html.twig" %}
-
-{% block title %}iPhone | New Contact{% endblock %}
+{% form_theme form "PhoneBundle:Form:fields.html.twig" %}
+{% block title %} New Contact {% endblock %}
 
 {% block body %}
      <div class="row">
@@ -11,5 +11,8 @@
 {% if done is defined %}
     <strong>{{ done }}</strong><br/><br/>
 {% endif %}
+{{ form_widget(form) }}
+{{ form_errors(form) }}
+{{ form_rest(form) }}
 {{ form(form) }}
 {% endblock %}
